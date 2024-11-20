@@ -1,7 +1,7 @@
 // 리스트 생성 관련
 export const imgData = [
   {
-    src: "../img/2020/CAFE_NURI/nuri10.jpg",
+    src: "img/2020/CAFE_NURI/nuri10.jpg",
     text: "광주",
     info: "CAFE NURI",
     description: "Portfolio",
