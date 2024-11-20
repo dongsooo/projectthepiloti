@@ -66,14 +66,14 @@ export const imgData = [
     customClass: "wineShop",
   },
   {
-    src: "img/2020/LE_CAFE_SEASON/lecafeseason4.jpg",
+    src: "img/2020/LE_CAFE_SEASON/lecafeseason4.JPG",
     text: "광주 서구",
     info: "LE CAFE SEASON",
     link: "detailPage/leCafeSeason.html",
     customClass: "cafe",
   },
   {
-    src: "img/2020/TOV_COFFEE/tov13.jpg",
+    src: "img/2020/TOV_COFFEE/tov13.JPG",
     text: "광주 광산구",
     info: "TOV COFFEE",
     description: "",

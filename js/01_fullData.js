@@ -66,14 +66,14 @@ export const imgData = [
     customClass: "store",
   },
   {
-    src: "img/2020/LE_CAFE_SEASON/lecafeseason4.jpg",
+    src: "img/2020/LE_CAFE_SEASON/lecafeseason4.JPG",
     text: "광주 서구",
     info: "LE CAFE SEASON",
     link: "detailPage/leCafeSeason.html",
     customClass: "cafe",
   },
   {
-    src: "img/2020/TOV_COFFEE/tov13.jpg",
+    src: "img/2020/TOV_COFFEE/tov13.JPG",
     text: "광주",
     info: "TOV COFFEE",
     description: "",
@@ -81,7 +81,7 @@ export const imgData = [
     customClass: "cafe",
   },
   {
-    src: "img/2020/APT_KUMHO_DAEWOO/kumho8.jpg",
+    src: "img/2020/APT_KUMHO_DAEWOO/kumho8.JPG",
     text: "광주 서구",
     info: "KUMHO DAEWOO APT",
     link: "detailPage/AptKumhoDaewoo24py.html",
