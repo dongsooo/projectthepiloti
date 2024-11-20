@@ -1,0 +1,932 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+video {
+  vertical-align: top;
+}
+
+body {
+  font-family: "Pretendard", sans-serif; /* 기본 폰트는 Pretendard */
+}
+
+.english {
+  font-family: "Playfair Display", serif; /* 영어 전용 폰트 */
+}
+
+.korean {
+  font-family: "Pretendard", sans-serif; /* 한글 전용 폰트 */
+}
+
+.hidden {
+  display: none !important;
+}
+
+.wrap {
+  width: 100%;
+  position: relative;
+  min-width: 340px;
+  /* overflow-x: hidden; */
+  overflow: hidden;
+}
+
+.textBoxSideBox {
+  color: black;
+  writing-mode: vertical-rl; /* 세로로 텍스트 표시 */
+  width: fit-content;
+  white-space: nowrap; /* 줄 바꿈 방지 */
+  position: fixed;
+  z-index: 20;
+  top: 57%;
+  left: 2px;
+  transform: translateY(-50%) rotate(180deg);
+  letter-spacing: 1px;
+}
+
+.rendingTopBar {
+  width: calc(100% - 40px);
+  min-width: 340px;
+  height: 80px;
+  position: fixed;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid rgb(226, 226, 226);
+  background-color: white;
+  z-index: 1000;
+}
+
+.blankBox {
+  width: calc(100% / 3);
+  height: 100%;
+  z-index: 20;
+}
+
+.mobileLogoBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.mobileLogoBox > a {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.mobileLogoBox > a > img {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.285);
+}
+
+.searchBarWrap {
+  width: calc(100% / 3);
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  z-index: 20;
+}
+
+.searchBar {
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px; /* 모서리를 더 둥글게 */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.searchBar > input {
+  width: 90%;
+  height: 100%;
+  color: white;
+  border: none; /* 테두리 제거 */
+  background-color: transparent;
+  font-size: 16px;
+  outline: none; /* 포커스 시 기본 테두리 제거 */
+}
+
+.searchBar > input::placeholder {
+  color: white; /* 플레이스홀더 텍스트 색상 */
+  text-align: center; /* 플레이스홀더도 가운데 정렬 */
+}
+
+.searchBar > div {
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  text-align: center;
+  z-index: 9999;
+}
+
+.dropdown {
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute; /* 절대 위치 지정 */
+  left: 50%;
+  top: 70px;
+  margin-top: 5px; /* 검색 바와 간격 조정 */
+  z-index: 20; /* 검색 바보다 위에 표시 */
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.dropdownCancleBtn {
+  position: absolute;
+  display: block;
+  padding: 0.5em;
+  cursor: pointer;
+  color: white;
+  top: 3%;
+  right: 1%;
+}
+
+.dropdownTextBox {
+  padding: 1em;
+}
+
+.dropdownTextBox > p {
+  color: white;
+  text-align: center;
+}
+
+.dropdown .mobile {
+  display: none;
+}
+
+.searchBar > input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* 플레이스홀더 색상 조정 */
+}
+
+.menuBar {
+  width: calc(100% / 3);
+  height: 100%;
+  z-index: 20;
+  display: flex;
+}
+
+.menuBar > ul {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: end;
+}
+
+.menuBar > ul.mobile {
+  display: none;
+}
+
+.menuBar > ul.pc {
+  display: flex;
+  align-items: end;
+}
+
+.menuBar > ul > li {
+  padding: 0 2em;
+  height: calc(80px / 3);
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.menuBar > ul > li:first-child {
+  justify-content: center;
+}
+
+.menuBar > ul > li:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+
+.menuBar > ul > li:nth-child(3) {
+  position: relative;
+}
+
+.menuBar > ul > li:last-child {
+  height: 80px;
+  padding: 0;
+  align-items: start;
+}
+
+.menuBar > ul > li > a,
+.menuBar > ul > li > i {
+  font-size: 0.8em;
+  color: black;
+}
+
+.menuBar > ul > li > a {
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.menuBar > ul > li > i {
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.subMenuContainer {
+  position: fixed; /* 화면에 고정 */
+  top: 81px; /* rendingTopBar의 높이만큼 떨어뜨림 (필요에 따라 조정) */
+  left: 0; /* 왼쪽 정렬 */
+  width: calc(100vw - 40px);
+  height: 96px;
+  background: white;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.subMenu {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 0.5em 0;
+}
+
+.menuBar > ul > li:hover > .subMenuContainer {
+  opacity: 1;
+  visibility: visible;
+  justify-content: center; /* 가운데 정렬 */
+}
+
+.menuBar > ul > li:hover > .subMenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.subMenu > li {
+  height: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subMenu > li > a {
+  font-size: 0.8em;
+}
+
+.logoBox {
+  width: 50px;
+  height: 50px;
+  margin-top: 1em;
+  z-index: 20;
+}
+
+.logoBox > a {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+}
+
+.logoBox img {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.329);
+}
+
+.portfolioWrap {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+.imageWrap {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 3em;
+  padding-left: 20px; /* 좌측 패딩 추가 */
+  padding-right: 20px; /* 우측 패딩 추가 */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.imgBoxWrap {
+  width: 100%;
+  display: grid; /* grid 사용 */
+  grid-template-columns: repeat(4, minmax(200px, 1fr)); /* 최대 4열 설정 */
+  gap: 10px; /* 각 imgBox 사이의 간격 */
+}
+
+.imgBox {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imgBox::after {
+  display: block;
+  content: "";
+  padding-bottom: 100%;
+}
+
+.imgContentsBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.imgBox p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.imgBox:hover p {
+  opacity: 1;
+  visibility: visible;
+}
+
+.imgBox:hover img {
+  filter: brightness(0.8);
+}
+
+.imgBox p:first-child {
+  top: 46%;
+  font-size: 1em;
+}
+
+.imgBox p:last-of-type {
+  top: 54%;
+  font-size: 1.5em;
+}
+
+.imgBox a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.imgBox img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.imgBoxTextBox {
+  position: absolute;
+  top: 20%;
+  left: 2em;
+  display: flex;
+  width: 100%;
+}
+
+.imgBoxTextBox p {
+  color: white;
+  width: 50%;
+}
+
+.mobileMenuBar {
+  width: 180px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.299);
+  position: fixed;
+  top: 0;
+  right: -180px;
+  z-index: 3000;
+  transition: all 0.3s;
+  backdrop-filter: blur(3px);
+  overflow: hidden;
+}
+
+.mobileMenuBar.active {
+  right: 0;
+}
+
+.mobileMenuBtnBox {
+  position: relative;
+  height: 50px;
+  top: 10px;
+}
+
+.mobileMenuBtnBox > i {
+  position: absolute;
+  top: 60%;
+  transform: translatey(-50%);
+  right: 24px;
+  top: 30px;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+.mobileMenuBar > ul {
+  width: 100%;
+  height: 100%;
+  z-index: 3000;
+  position: relative;
+  top: 20px;
+}
+
+.mobileMenuBar > ul > li {
+  padding: 1em 2em;
+}
+
+.mobileMenuBar > ul > li > a {
+  color: white;
+}
+
+.mobileSubMenu {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.mobileSubMenu > li {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
+
+.mobileSubMenu > li > a {
+  color: white;
+  font-size: 0.8em;
+}
+
+.bottomBtnBox {
+  width: 50px;
+  height: 165px;
+  bottom: 10px;
+  right: 1.2em;
+  position: fixed;
+  z-index: 2000;
+}
+
+.btnBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  top: 0;
+  left: 0;
+  align-items: center;
+  position: absolute;
+  z-index: 20;
+}
+
+.pageUpBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(0, 0, 0);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.pageUpBtn > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  color: white;
+}
+
+/* .kakaoBtn,
+.instaBtn {
+  width: fit-content;
+  position: absolute;
+  top: 2px;
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 20;
+  border: 1px solid black;
+} */
+
+.kakaoBtn,
+.instaBtn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 2px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgb(134, 134, 134);
+}
+
+.kakaoBtn {
+  top: 50%;
+}
+
+.instaBtn {
+  top: 85%;
+}
+
+.kakaoBtn a,
+.instaBtn a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: white;
+  font-size: 0.8em;
+}
+
+footer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.footerContentsWrap {
+  max-width: 100%;
+  height: 185px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerContents {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-top: 1px solid rgb(226, 226, 226);
+}
+
+.footerRightBox {
+  width: 70%;
+  height: 100%;
+  /* border-top: 1px solid rgb(226, 226, 226); */
+  display: flex;
+  flex-direction: column;
+}
+
+.rightMiddleBox,
+.rightBottomBox {
+  width: 100%;
+
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(165, 165, 165);
+  font-size: 0.8em;
+}
+
+.rightMiddleBox {
+  margin: 1em 0;
+}
+
+.rightBottomBox > p:last-child {
+  margin: 1em 0;
+}
+
+.rightTopBox {
+  margin-top: 3em;
+  height: 50px;
+}
+
+.kakaoText {
+  cursor: pointer;
+  color: black;
+}
+
+.rightMiddleBox > p:first-child {
+  margin-bottom: 0.3em;
+}
+
+.footerLeftBox {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: 0.8em;
+  color: rgb(165, 165, 165);
+}
+
+.leftTopBox {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.leftTopBox a {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.leftTopBox img {
+  width: 30px;
+}
+
+.leftMiddleBox {
+  width: 100%;
+  height: 50px;
+}
+
+.leftBottomBox {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.leftBottomBox p {
+  font-size: 1em;
+  color: black;
+  font-weight: lighter;
+  text-align: end;
+}
+
+.mobile {
+  display: none;
+}
+
+.pc {
+  display: block;
+}
+
+/* 그리드 정렬 미디어쿼리 */
+@media (max-width: 1024px) {
+  .imgBoxWrap {
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* 3열 설정 */
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  /* 모바일 스타일 */
+
+  .wrap {
+    max-width: 767px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .rendingTopBar {
+    width: calc(100% - 20px);
+
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .mobileLogoBox {
+    width: 88px;
+    display: flex;
+    justify-content: start;
+
+    margin-left: 10px;
+  }
+
+  .searchBarWrap {
+    align-items: center;
+  }
+
+  .searchBar {
+    top: 50%;
+    transform: translatey(-50%);
+  }
+
+  .searchBar input::placeholder {
+    font-size: 0.8em;
+  }
+
+  .menuBar > ul:first-child {
+    display: none;
+  }
+
+  .menuBar > ul:last-child {
+    display: flex;
+    width: 100%;
+    margin-right: 10px;
+  }
+
+  .menuBar > ul:last-child > li {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menuBar > ul:last-child > li > i {
+    margin-bottom: 0;
+    color: black;
+  }
+
+  .menuBar > ul:last-child > li > i:last-child {
+    display: block;
+  }
+
+  .searchBarWrap {
+    width: 500px;
+  }
+
+  .searchBar {
+    width: 100%;
+  }
+
+  .searchBar > input {
+    width: 80%;
+  }
+
+  .searchBar > div {
+    width: 100%;
+    top: 82%;
+    font-size: 0.8em;
+  }
+
+  .dropdown {
+    width: 300px;
+    height: 70px;
+    top: 78px;
+  }
+
+  .dropdown .pc {
+    display: none;
+  }
+
+  .dropdown .mobile {
+    display: block;
+  }
+
+  .dropdownTextBox {
+    font-size: 0.8em;
+  }
+
+  .dropdownTextBox p:last-child {
+    font-size: 0.8em;
+  }
+
+  .portfolioWrap {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .imageWrap {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .imgBoxWrap {
+    max-width: 767px;
+    grid-template-columns: repeat(2, 1fr); /* 3열 설정 */
+    overflow: hidden;
+  }
+
+  .imgbox {
+    width: calc((100% - 30px) / 2);
+  }
+
+  .imgBox p {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .imgBox p:first-child {
+    top: 43%;
+    font-size: 0.7em;
+  }
+
+  .imgBox p:last-of-type {
+    top: 55%;
+    font-size: 0.9em;
+  }
+
+  .imgBox img {
+    filter: brightness(0.8);
+  }
+
+  .mobile .textBox {
+    margin-top: 3em;
+    z-index: 20;
+  }
+
+  .moblieText {
+    display: block;
+  }
+
+  footer {
+    max-width: 767px;
+  }
+
+  .footerContentsWrap {
+    max-width: 767px;
+    padding: 0 10px;
+  }
+
+  .footerContents {
+    width: 100%;
+  }
+
+  .footerRightBox {
+    /* position: absolute; */
+    flex-grow: 3;
+  }
+
+  .rightTopBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .kakaoText {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .leftTopBox {
+    margin-top: 0em;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .footerLeftBox {
+    flex-shrink: 0;
+
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    margin-right: 0;
+  }
+
+  .rightMiddleBox p {
+    margin-bottom: 0.3em;
+  }
+
+  .leftBottomBox > p {
+    font-size: 0.6em;
+    position: absolute;
+    bottom: 24px;
+  }
+}

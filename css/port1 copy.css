@@ -1,0 +1,726 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+video {
+  vertical-align: top;
+}
+
+.wrap {
+  width: 100%;
+  position: relative;
+  min-width: 360px;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+}
+
+.rendingTopBar {
+  max-width: 100%;
+  height: 80px;
+  position: relative;
+  left: 0;
+  top: 30px;
+  display: flex;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.blankBox {
+  width: calc(100% / 3);
+  height: 100%;
+  z-index: 20;
+  padding-left: 1em;
+}
+
+.mobileLogoBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.mobileLogoBox > a {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.mobileLogoBox > a > img {
+  width: 100%;
+  height: 100%;
+}
+
+.searchBarWrap {
+  width: calc(100% / 3);
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  z-index: 20;
+}
+
+.menuBar {
+  width: calc(100% / 3);
+  height: 100%;
+  z-index: 20;
+  display: flex;
+  padding-right: 1em;
+}
+
+.menuBar > ul {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: end;
+}
+
+.menuBar > ul.mobile {
+  display: none;
+}
+
+.menuBar > ul.pc {
+  display: flex;
+}
+
+.menuBar > ul > li {
+  padding: 0 2em;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.menuBar > ul > li:first-child {
+  justify-content: center;
+}
+
+.menuBar > ul > li:last-child {
+  padding: 0;
+
+  align-items: start;
+}
+
+.menuBar > ul > li > a {
+  font-size: 0.8em;
+  color: black;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.menuBar > ul > li > a > p {
+  color: white;
+}
+
+.logoBox {
+  width: 50px;
+  height: 50px;
+  margin-top: 1em;
+  z-index: 20;
+}
+
+.logoBox > a {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+}
+
+.logoBox img {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.182);
+}
+
+.imgBox {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imgBox > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.imgBox img {
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+.contentsWrap {
+  max-width: 1400px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 5em;
+  padding: 0 1em;
+}
+
+.contentsLeftBox {
+  margin-right: 2em;
+  width: 50%;
+}
+
+.imgContentsBox {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  width: 100%;
+}
+
+.swiper-slide {
+  position: relative;
+  width: 50%;
+}
+
+.swiper-slide::after {
+  display: block;
+  content: "";
+  padding-bottom: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: rgb(226, 226, 226);
+  font-size: 16px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgb(226, 226, 226) !important;
+}
+
+.contentsRightBox {
+  width: 50%;
+  padding-left: 2em;
+  border-left: 1px solid rgb(226, 226, 226);
+}
+
+.textContentsBox {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.textTopBox {
+  width: 100%;
+  height: 80px;
+}
+
+.textTopBox > p {
+  color: #333333;
+}
+
+.textTopBox > p:first-child {
+  font-weight: lighter;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.textTopBox > p:last-child {
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.textBottomBox {
+  width: 100%;
+  height: 406px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.BottomTextBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-top: 1px solid rgb(226, 226, 226);
+}
+
+.BottomTextBox > p {
+  color: #333333;
+  display: block;
+  margin-bottom: 1em;
+}
+
+.BottomTextBox_left {
+  width: 100px;
+  padding-top: 1.5em;
+}
+
+.BottomTextBox_left > p {
+  color: #333333;
+  font-weight: lighter;
+  font-size: 1em;
+  margin-top: 0.5em;
+}
+
+.BottomTextBox_left > p:first-child {
+  color: #232323;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.BottomTextBox_right {
+  padding-top: 1.5em;
+  width: 100px;
+}
+
+.BottomTextBox_right > p {
+  font-weight: 400;
+  font-size: 1em;
+  margin-top: 0.5em;
+}
+
+.BottomTextBox_right > p:first-child {
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.kakaoBtn {
+  width: 200px;
+  height: 50px;
+  border: 1px solid rgb(226, 226, 226);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.detailWrap {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  position: relative;
+}
+
+.detailImgBox {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.deImgBox {
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+  margin-top: 1em;
+}
+
+.show {
+  display: block;
+}
+
+.deImgBox img {
+  max-width: 100%;
+
+  object-fit: cover;
+}
+
+.cropImgBox {
+  display: flex;
+}
+
+.cropImgBox img {
+  max-width: 100%;
+}
+
+.cropImg1 {
+  margin-right: 1em;
+}
+
+.moreViewBtn {
+  max-width: 1400px;
+  height: 50px;
+  border: 1px solid rgb(226, 226, 226);
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.goToUpBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgb(226, 226, 226);
+  position: absolute;
+  bottom: -50px;
+  right: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.footerContentsWrap {
+  max-width: 100%;
+  height: 185px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerContents {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-top: 1px solid rgb(226, 226, 226);
+}
+
+.footerRightBox {
+  width: 70%;
+  height: 100%;
+  /* border-top: 1px solid rgb(226, 226, 226); */
+  display: flex;
+  flex-direction: column;
+}
+
+.rightMiddleBox,
+.rightBottomBox {
+  width: 100%;
+
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(165, 165, 165);
+  font-size: 0.8em;
+}
+
+.rightMiddleBox {
+  margin: 1em 0;
+}
+
+.rightBottomBox > p:last-child {
+  margin: 1em 0;
+}
+
+.rightTopBox {
+  margin-top: 3em;
+  height: 50px;
+}
+
+.kakaoText {
+  cursor: pointer;
+  color: black;
+}
+
+.rightMiddleBox > p:first-child {
+  margin-bottom: 0.3em;
+}
+
+.footerLeftBox {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: 0.8em;
+  color: rgb(165, 165, 165);
+}
+
+.leftTopBox {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.leftTopBox a {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.leftTopBox img {
+  width: 30px;
+}
+
+.leftMiddleBox {
+  width: 100%;
+  height: 50px;
+}
+
+.leftBottomBox {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.leftBottomBox p {
+  font-size: 1em;
+  color: black;
+  font-weight: lighter;
+  text-align: end;
+}
+
+.mobile {
+  display: none;
+}
+
+.pc {
+  display: block;
+}
+
+.mobileMenuBar {
+  width: 180px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.299);
+  position: fixed;
+  top: 0;
+  right: -180px;
+  z-index: 30;
+  transition: all 0.3s;
+  backdrop-filter: blur(3px);
+  overflow: hidden;
+}
+
+/* 모바일 메뉴바가 활성화 될 때의 스타일 */
+.mobileMenuBar.active {
+  right: 0; /* 메뉴바가 보이게 함 */
+}
+
+.mobileMenuBtnBox {
+  position: relative;
+  height: 50px;
+  top: 10px;
+  z-index: 30;
+}
+
+.mobileMenuBtnBox > i {
+  position: absolute;
+  top: 60%;
+  transform: translatey(-50%);
+  right: 16px;
+  color: white;
+}
+
+.mobileMenuBar > ul {
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  position: relative;
+  top: 20px;
+}
+
+.mobileMenuBar > ul > li {
+  padding: 1em 2em;
+}
+
+.mobileMenuBar > ul > li > a {
+  color: white;
+}
+
+.mobileMenuCancleBtn {
+  display: none;
+  cursor: pointer;
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  /* 모바일 스타일 */
+
+  .wrap {
+    max-width: 767px;
+  }
+
+  .rendingTopBar {
+    max-width: 767px;
+    top: 0px;
+  }
+
+  .mobileLogoBox {
+    display: flex;
+    position: relative;
+  }
+
+  .mobileLogoBox > a {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.265);
+  }
+
+  .menuBar > ul:first-child {
+    display: none;
+  }
+
+  .menuBar > ul:last-child {
+    display: flex;
+  }
+
+  .menuBar > ul:last-child > li {
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .menuBar > ul:last-child > li > i {
+    color: black;
+    position: absolute;
+    right: 0;
+  }
+
+  .menuBar > ul:last-child > li > i:last-child {
+    display: block;
+  }
+  .contentsWrap {
+    flex-direction: column;
+    margin-top: 2em;
+    max-width: 767px;
+  }
+
+  .contentsLeftBox {
+    width: 100%;
+  }
+
+  .contentsRightBox {
+    width: 100%;
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .textTopBox {
+    margin-top: 1em;
+    border-bottom: 1px solid rgb(226, 226, 226);
+  }
+
+  .BottomTextBox {
+    border-top: 0;
+    height: 200px;
+  }
+
+  .textBottomBox {
+    height: 200px;
+  }
+
+  .kakaoBtn {
+    width: 100%;
+  }
+
+  .goToUpBtn {
+    right: 15px;
+  }
+
+  footer {
+    max-width: 767px;
+  }
+
+  .footerContentsWrap {
+    max-width: 767px;
+    padding: 0 10px;
+  }
+
+  .footerContents {
+    width: 100%;
+  }
+
+  .footerRightBox {
+    /* position: absolute; */
+    flex-grow: 3;
+  }
+
+  .rightTopBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .kakaoText {
+    background-color: blue;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .leftTopBox {
+    margin-top: 0em;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .footerLeftBox {
+    flex-shrink: 0;
+
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    margin-right: 0;
+  }
+
+  .rightMiddleBox p {
+    margin-bottom: 0.3em;
+  }
+
+  .leftBottomBox > p {
+    font-size: 0.6em;
+    position: absolute;
+    bottom: 24px;
+  }
+}

@@ -1,0 +1,512 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+video {
+  vertical-align: top;
+}
+
+.wrap {
+  width: 100%;
+  position: relative;
+  height: auto;
+  min-width: 360px;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.rending {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll; /* 세로 스크롤 추가 */
+  overflow-x: hidden;
+}
+
+.textBoxSideBox {
+  color: white;
+  writing-mode: vertical-rl; /* 세로로 텍스트 표시 */
+  width: fit-content;
+  white-space: nowrap; /* 줄 바꿈 방지 */
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 1%;
+  transform: translateY(-50%) rotate(180deg);
+  letter-spacing: 1px;
+}
+
+.rendingTopBar {
+  width: 100%;
+  top: 30px;
+  left: 0;
+  height: 80px;
+  position: fixed;
+  display: flex;
+  z-index: 1000;
+}
+
+.blankBox {
+  width: calc(100% / 3);
+  height: 100%;
+  z-index: 20;
+}
+
+.mobileLogoBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.mobileLogoBox > a {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.mobileLogoBox > a > img {
+  width: 100%;
+  height: 100%;
+}
+
+.searchBarWrap {
+  width: calc(100% / 3);
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  z-index: 20;
+}
+
+.searchBar {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(213, 100, 80, 0.572);
+  border-radius: 20px; /* 모서리를 더 둥글게 */
+}
+
+.searchBar > input {
+  width: 90%;
+  height: 100%;
+  color: white;
+  border: none; /* 테두리 제거 */
+  background-color: transparent;
+  font-size: 16px;
+  outline: none; /* 포커스 시 기본 테두리 제거 */
+}
+
+.searchBar > input::placeholder {
+  color: white; /* 플레이스홀더 텍스트 색상 */
+  text-align: center; /* 플레이스홀더도 가운데 정렬 */
+}
+
+.searchBar > div {
+  color: tomato;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+
+  top: 100%;
+  text-align: center;
+}
+
+.dropdown {
+  width: 60%;
+
+  background-color: rgba(255, 99, 71, 0.396);
+  position: absolute; /* 절대 위치 지정 */
+  left: 50%;
+  top: 105px;
+  transform: translateX(-50%); /* 중앙 정렬 */
+  margin-top: 5px; /* 검색 바와 간격 조정 */
+  display: none; /* 기본적으로 숨김 */
+  z-index: 20; /* 검색 바보다 위에 표시 */
+}
+
+.dropdownCancleBtn {
+  position: absolute;
+  display: block;
+  padding: 0.5em;
+  cursor: pointer;
+  color: white;
+  top: 3%;
+  right: 1%;
+}
+
+.dropdownTextBox {
+  padding: 1em;
+}
+
+.dropdownTextBox > p {
+  color: white;
+  text-align: center;
+}
+
+.dropdown .mobile {
+  display: none;
+}
+
+.searchBar > input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* 플레이스홀더 색상 조정 */
+}
+
+.menuBar {
+  width: calc(100% / 3);
+  height: 100%;
+  z-index: 20;
+  display: flex;
+}
+
+.menuBar > ul {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: end;
+}
+
+.menuBar > ul.mobile {
+  display: none;
+}
+
+.menuBar > ul.pc {
+  display: flex;
+}
+
+.menuBar > ul > li {
+  padding: 0 2em;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.menuBar > ul > li:first-child {
+  padding-right: 0;
+}
+
+.menuBar > ul > li:last-child {
+  padding: 0;
+  padding-right: 1em;
+  align-items: start;
+}
+
+.menuBar > ul > li > a {
+  font-size: 0.8em;
+  color: white;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.menuBar > ul > li > a > p {
+  color: white;
+}
+
+.logoBox {
+  width: 50px;
+  height: 50px;
+  margin-top: 1em;
+  z-index: 20;
+}
+
+.logoBox > a {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+}
+
+.logoBox img {
+  width: 100%;
+}
+
+.imgBox {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imgBox > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.imgBox img {
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+.activeHover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-out;
+}
+
+.imgBox:hover .activeHover {
+  background-color: rgba(0, 0, 0, 0.308);
+}
+
+.imgBoxTextBox {
+  position: absolute;
+  top: 20%;
+  left: 2em;
+  display: flex;
+  width: 100%;
+}
+
+.imgBoxTextBox p {
+  color: white;
+  width: 50%;
+}
+
+.mobileMenuBar {
+  width: 180px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.299);
+  position: fixed;
+  top: 0;
+  right: -180px;
+  z-index: 3000;
+  transition: all 0.3s;
+  backdrop-filter: blur(3px);
+  overflow: hidden;
+}
+
+.mobileMenuBar.active {
+  right: 0;
+}
+
+.mobileMenuBtnBox {
+  position: relative;
+  height: 50px;
+  top: 60px;
+}
+
+.mobileMenuBtnBox > i {
+  position: absolute;
+  top: 60%;
+  transform: translatey(-50%);
+  right: 17px;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+.mobileMenuBar > ul {
+  width: 100%;
+  height: 100%;
+  z-index: 3000;
+  position: relative;
+  top: 60px;
+}
+
+.mobileMenuBar > ul > li {
+  padding: 1em 2em;
+}
+
+.mobileMenuBar > ul > li > a {
+  color: white;
+}
+
+.bottomBtnBox {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 2000;
+  bottom: 0;
+  left: 0;
+}
+
+.btnBox {
+  width: 100px;
+  height: 80px;
+  display: flex;
+  bottom: 20px;
+  right: 2.2%;
+  align-items: center;
+  position: absolute;
+  z-index: 20;
+}
+
+.kakaoBtn,
+.instaBtn {
+  width: fit-content;
+  position: absolute;
+  top: 2px;
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 20;
+  border: 1px solid white;
+}
+
+.btnBox a {
+  display: flex;
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+.kakaoBtn {
+  left: 27px;
+}
+
+.instaBtn {
+  left: 0;
+  top: 40px;
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  /* 모바일 스타일 */
+
+  .wrap {
+    max-width: 767px;
+  }
+
+  .rendingTopBar {
+    max-width: 767px;
+    top: 0px;
+  }
+
+  .mobileLogoBox {
+    display: flex;
+  }
+
+  .searchBarWrap {
+    align-items: center;
+  }
+
+  .menuBar > ul:first-child {
+    display: none;
+  }
+
+  .menuBar > ul:last-child {
+    display: flex;
+  }
+
+  .menuBar > ul:last-child > li {
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .menuBar > ul:last-child > li > i {
+    color: white;
+  }
+
+  .menuBar > ul:last-child > li > i:last-child {
+    display: block;
+  }
+
+  .searchBarWrap {
+    width: 500px;
+  }
+
+  .searchBar {
+    width: 100%;
+  }
+
+  .searchBar > input {
+    width: 80%;
+  }
+
+  .searchBar > div {
+    width: 80%;
+    top: 82%;
+    font-size: 0.8em;
+  }
+
+  .dropdown {
+    width: 90%;
+    bottom: 30px;
+    height: 100px;
+  }
+
+  .dropdown .pc {
+    display: none;
+  }
+
+  .dropdown .mobile {
+    display: block;
+  }
+
+  .dropdownTextBox {
+    font-size: 1em;
+  }
+
+  .mobile .textBox {
+    margin-top: 3em;
+    z-index: 20;
+  }
+
+  .textBoxSideBox {
+    left: 2.3%;
+  }
+
+  .moblieText {
+    display: block;
+  }
+
+  .bottomBtnBox {
+    max-width: 767px;
+    height: 100px;
+    bottom: 0px;
+  }
+
+  .btnBox {
+    flex-direction: column;
+    align-items: start;
+    top: 40%;
+    transform: translateY(-50%);
+  }
+
+  .imgBox:hover .activeHover {
+    background-color: transparent; /* hover 효과 제거 */
+  }
+
+  .activeHover {
+    display: none;
+  }
+}
