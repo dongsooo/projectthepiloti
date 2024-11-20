@@ -14,7 +14,7 @@ kakaoBtn.addEventListener("click", (e) => {
 
 const imgData = [
   {
-    src: "img/2020/LE_CAFE_SEASON/lecafeseason4.jpg",
+    src: "img/2020/LE_CAFE_SEASON/lecafeseason4.JPG",
     text: "CAFE",
     address: "광주 서구",
     info: "LE CAFE SEASON",
