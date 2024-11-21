@@ -75,7 +75,7 @@ let isMobileSubMenu = true;
 mobileSubMenuBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (isMobileSubMenu) {
-    mobileSubMenu.style.height = "80px";
+    mobileSubMenu.style.height = "110px";
   } else {
     mobileSubMenu.style.height = "0px";
   }

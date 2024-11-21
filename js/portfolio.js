@@ -45,7 +45,7 @@ mobileSubMenuBtn.addEventListener("click", (e) => {
   e.preventDefault(); // 기본 링크 이동 방지
   // 서브메뉴 열기/닫기
   if (isMobileSubMenu) {
-    mobileSubMenu.style.height = "80px"; // 서브메뉴 열기
+    mobileSubMenu.style.height = "110px"; // 서브메뉴 열기
   } else {
     mobileSubMenu.style.height = "0px"; // 서브메뉴 닫기
   }
