@@ -71,9 +71,7 @@ body {
   width: 100%;
   min-width: 100%;
   min-height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
+  object-fit: cover;
 }
 
 .aboutTextBox {
@@ -156,7 +154,7 @@ body {
   height: 100vh;
   min-height: 100vh;
   width: 100%;
-  position: relative;
+  position: absolute;
 }
 
 .textBoxSideBox {
@@ -628,7 +626,6 @@ body {
   .textBox {
     max-width: 767px;
     height: 100vh;
-    position: relative;
   }
 
   .textBoxSideBox {
