@@ -18,7 +18,7 @@ const imgData = [
     text: "CAFE",
     address: "광주 서구",
     info: "LE CAFE SEASON",
-    link: "../detailPage/leCafeSeason.html",
+    link: "detailPage/leCafeSeason.html",
     className: "cafe",
   },
   {
@@ -26,7 +26,7 @@ const imgData = [
     text: "STUDIO", // br 태그로 줄바꿈 추가
     address: "광주 서구",
     info: "MOLITO",
-    link: "../detailPage/molito.html",
+    link: "detailPage/molito.html",
     className: "studio",
   },
   {
@@ -34,7 +34,7 @@ const imgData = [
     text: "BAKERY CAFE", // br 태그로 줄바꿈 추가
     address: "광주 동구",
     info: "Bagel Bazel",
-    link: "../detailPage/bagelBazel.html",
+    link: "detailPage/bagelBazel.html",
     className: "cafe",
   },
   {
@@ -42,7 +42,7 @@ const imgData = [
     text: "HAIR SHOP", // br 태그로 줄바꿈 추가
     address: "광주 광산구",
     info: "Aube",
-    link: "../detailPage/aube.html",
+    link: "detailPage/aube.html",
     className: "hairShop",
   },
 ];
