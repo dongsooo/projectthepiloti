@@ -22,7 +22,7 @@ let kakaoBtn = document.querySelector(".kakaoBtn");
 kakaoBtn.addEventListener("click", (e) => {
   e.preventDefault();
   Kakao.Channel.chat({
-    channelPublicId: "_XxaAxhn", // 카카오톡 채널 홈 URL에 명시된 id로 설정합니다.
+    channelPublicId: "_QUHxdn", // 카카오톡 채널 홈 URL에 명시된 id로 설정합니다.
   });
 });
 

@@ -8,7 +8,7 @@ let kakaoBtn = document.querySelector(".kakaoBtn");
 kakaoBtn.addEventListener("click", (e) => {
   e.preventDefault();
   Kakao.Channel.chat({
-    channelPublicId: "_XxaAxhn",
+    channelPublicId: "_QUHxdn",
   });
 });
 
