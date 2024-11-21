@@ -119,7 +119,7 @@ export const imgData = [
     src: "img/2024/sodam_maru/003.jpeg",
     text: "광주",
     info: "소담마루",
-    link: "detailPage/sodamMaru.html",
+    link: "detailPage/sadamMaru.html",
     customClass: "store",
   },
 ];

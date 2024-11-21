@@ -94,3 +94,81 @@ mobileSubMenuItems.forEach((item) => {
 mobileMenuCancleBtn.addEventListener("click", () => {
   mobileSubMenu.style.height = "0px";
 });
+
+// 모달 이벤트
+document.addEventListener("DOMContentLoaded", () => {
+  const deImgBoxes = document.querySelectorAll(".deImgBox");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalClose = document.getElementById("modal-close");
+
+  // 미디어쿼리 조건
+  const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+  // 스크롤 비활성화 함수
+  const disableScroll = () => {
+    document.body.style.overflow = "hidden";
+  };
+
+  // 스크롤 활성화 함수
+  const enableScroll = () => {
+    document.body.style.overflow = "";
+  };
+
+  // 이벤트 핸들러 등록 함수
+  const addEventListeners = () => {
+    deImgBoxes.forEach((box) => {
+      box.addEventListener("click", handleImageClick);
+    });
+    modalClose.addEventListener("click", handleCloseModal);
+    modal.addEventListener("click", handleOutsideClick);
+  };
+
+  // 이벤트 핸들러 제거 함수
+  const removeEventListeners = () => {
+    deImgBoxes.forEach((box) => {
+      box.removeEventListener("click", handleImageClick);
+    });
+    modalClose.removeEventListener("click", handleCloseModal);
+    modal.removeEventListener("click", handleOutsideClick);
+  };
+
+  // 이미지 클릭 이벤트 핸들러
+  const handleImageClick = (e) => {
+    const img = e.currentTarget.querySelector("img"); // 클릭한 .deImgBox 안의 <img> 태그
+    modalImg.src = img.src; // 모달 이미지에 src 설정
+    modal.classList.remove("hidden"); // 모달 표시
+    disableScroll(); // 스크롤 비활성화
+  };
+
+  // 모달 닫기 이벤트 핸들러
+  const handleCloseModal = () => {
+    modal.classList.add("hidden"); // 모달 숨김
+    enableScroll(); // 스크롤 활성화
+  };
+
+  // 모달 외부 클릭 시 닫기 이벤트 핸들러
+  const handleOutsideClick = (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden"); // 모달 숨김
+      enableScroll(); // 스크롤 활성화
+    }
+  };
+
+  // 미디어쿼리 변경에 따른 이벤트 처리
+  const handleMediaChange = (e) => {
+    if (e.matches) {
+      addEventListeners();
+    } else {
+      removeEventListeners();
+    }
+  };
+
+  // 초기 상태 확인 및 이벤트 처리
+  if (mediaQuery.matches) {
+    addEventListeners();
+  }
+
+  // 미디어쿼리 변경 이벤트 리스너
+  mediaQuery.addEventListener("change", handleMediaChange);
+});
