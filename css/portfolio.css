@@ -827,6 +827,7 @@ footer {
   .imageWrap {
     padding-left: 10px;
     padding-right: 10px;
+    min-height: 50vh;
   }
 
   .imgBoxWrap {
