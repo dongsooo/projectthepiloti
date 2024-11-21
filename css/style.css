@@ -156,7 +156,7 @@ body {
 .textBox {
   width: 100%;
   height: 100vh;
-  min-height: 100vh;
+
   width: 100%;
   position: relative;
 }
@@ -372,7 +372,6 @@ body {
   width: 100%;
   height: 100vh;
   position: relative;
-  background-color: green;
 }
 
 .imgBox img {
@@ -628,7 +627,7 @@ body {
   }
 
   .textBox {
-    max-width: 767px;
+    width: 100%;
     height: 100vh;
   }
 
