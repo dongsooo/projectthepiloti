@@ -84,10 +84,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 100;
 }
 
 .aboutTextBox > .pcText,
 .aboutTextBox > .mobileText {
+  width: 100%;
   position: absolute;
   font-weight: lighter;
   color: white;
